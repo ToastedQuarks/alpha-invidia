@@ -20,6 +20,18 @@ var initialState = {
   }
 }
 
+function reducePlanet(globalState, planet, action) {
+  if (planet === undefined) {
+    throw "reducePlanets is not a root reducer! It requires an explicit state"
+  }
+  switch (action.type) {
+    case act.clockTick.type:
+      var food = planet.food - planet.population.length
+      for (var i = 0; i > food; i--) {
+      }
+  }
+}
+
 function reduceGlobal(state, action) {
   if (state === undefined) {
     state = initialState
@@ -28,10 +40,9 @@ function reduceGlobal(state, action) {
     case act.clockTick.type:
       return Object.assign({}, state, {
         time: state.time+1,
-        planets: state.planets.map((p) => reducePlanet(p, action))
+        planets: state.planets.map(function(p) {reducePlanet(p, action)})
       })
     default:
       return state
   }
 }
-

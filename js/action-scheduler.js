@@ -6,7 +6,7 @@
 
 // This middleware will just add the property "async dispatch"
 // to actions with the "async" propperty set to true
-var asyncDispatchMiddleware = wu.curryable(function(store, next, action) {
+var asyncDispatchMiddleware = _.curry(function(store, next, action) {
   var syncActivityFinished = false;
   var actionQueue = [];
 
