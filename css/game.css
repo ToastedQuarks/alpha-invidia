@@ -84,3 +84,11 @@
   font-family: "Roboto", sans-serif;
   margin-left: 10px;
 }
+
+/* Generic Div */
+
+.generic {
+  float: left;
+  font-family: "Roboto", sans-serif;
+  margin-right: 10px;
+}

@@ -20,18 +20,30 @@
       <a class="navbar-right" href="https://github.com/ToastedQuarks/alpha-invidia">Source</a>
     </div>
     <div class="subnav" id="gamenav">
-      <a href="#">Main</a>
-      <a href="#">Tech</a>
-      <a href="#">War</a>
+      <a href="javascript:void(0);" onclick="swapToMain()">Main</a>
+      <a href="javascript:void(0);" onclick="swapToTech()">Tech</a>
+      <a href="javascript:void(0);" onclick="swapToWar()">War</a>
     </div>
-    <div class="resources" id="curr_resource">
-      Things you have:
+    <div id="maintab">
+      <div class="resources" id="curr_resource">
+        Things you have:
+      </div>
+      <div class="mainviewer" id="planetinfo">
+        You're on planet A1.
+      </div>
+      <div class="actionpanel" id="actions">
+        Try out some stuff:
+      </div>
     </div>
-    <div class="mainviewer" id="planetinfo">
-      You're on planet A1.
+    <div id="techtree" style="display:none">
+      <div class="generic">
+        This is the tech tree!
+      </div>
     </div>
-    <div class="actionpanel" id="actions">
-      Try out some stuff:
+    <div id="wartab" style="display:none">
+      <div class="generic">
+        This is where you'll fight baddies!
+      </div>
     </div>
     <script src="js/game.js"></script>
   </body>
