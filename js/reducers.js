@@ -31,7 +31,6 @@ function reducePlanet(globalState, planet, action) {
       }
   }
 }
-  
 
 function reduceGlobal(state, action) {
   if (state === undefined) {
@@ -47,4 +46,3 @@ function reduceGlobal(state, action) {
       return state
   }
 }
-

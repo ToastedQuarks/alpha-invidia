@@ -19,7 +19,7 @@ function dig(path, object) {
     
 function watchBranch(store, path, callback) {
   var currentState = dig(path, store.getState())
-  callback(undefined, currentState)
+  callback(currentState, undefined)
   return store.subscribe(function() {
     var newState = dig(path, store.getState())
     if (newState !== currentState) {
