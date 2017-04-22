@@ -23,7 +23,7 @@ function watchBranch(store, path, callback) {
   return store.subscribe(function() {
     var newState = dig(path, store.getState())
     if (newState !== currentState) {
-      callback(currentState, newState)
+      callback(newState, currentState)
     }
   })
 }
