@@ -6,8 +6,8 @@
     <title>Alpha Invidia</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap -->
-    <link href="css/game.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="dist/navbar.styles.css">
+    <link rel="stylesheet" href="dist/index.styles.css">
     <style>
       body {
         padding-top: 0px;
@@ -15,24 +15,21 @@
     </style>
   </head>
   <body>
-    <div class="navbar" id="pagenav">
-      <a href="#">Alpha Invidia</a>
-      <a class="navbar-right" href="https://github.com/ToastedQuarks/alpha-invidia">Source</a>
+    <div id="pagenav">
     </div>
-    <div class="subnav" id="gamenav">
-      <a href="#">Main</a>
-      <a href="#">Tech</a>
-      <a href="#">War</a>
+    <div id="gamenav">
     </div>
     <div class="resources" id="curr_resource">
       Things you have:
     </div>
     <div class="mainviewer" id="planetinfo">
-      You're on planet A1.
+      "No react. :("
     </div>
     <div class="actionpanel" id="actions">
       Try out some stuff:
     </div>
-    <script src="js/game.js"></script>
+    <script src="dist/commons.js"></script>
+    <script src="dist/index.bundle.js"></script>
+    <script src="dist/navbar.bundle.js"></script>
   </body>
 </html>

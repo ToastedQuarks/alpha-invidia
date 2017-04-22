@@ -58,29 +58,3 @@
 .subnav a.active {
   background-color: #D1F2EB;
 }
-
-/* Resources Panel */
-
-.resources {
-  float: left;
-  width: 300px;
-  font-family: "Roboto", sans-serif;
-  margin-right: 10px;
-}
-
-/* Main Area */
-
-.mainviewer {
-  float: left;
-  font-family: "Roboto", sans-serif;
-  margin-right: 10px;
-}
-
-/* Actions */
-
-.actionpanel {
-  float: right;
-  width: 300px;
-  font-family: "Roboto", sans-serif;
-  margin-left: 10px;
-}
