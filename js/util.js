@@ -10,12 +10,20 @@ function sequence(prefix) {
   }
 }
 
-function curry(f) {
-  if (f.length < 2 || typeof f !== 'function') {
-    return f
-  } else {
-    return function(a) {
-      return curry(f.apply(this, a))
-    }
+function dig(path, object) {
+  if (object === undefined || path.length < 1) {
+    return object
   }
+  return dig(path.slice(1), object[path[0]])
+}
+    
+function watchBranch(store, path, callback) {
+  var currentState = dig(path, store.getState())
+  callback(undefined, currentState)
+  return store.subscribe(function() {
+    var newState = dig(path, store.getState())
+    if (newState !== currentState) {
+      callback(currentState, newState)
+    }
+  })
 }
