@@ -1,5 +1,6 @@
 var initialState = {
   time: 0,
+  currentPlanet: "Alpha Invidia",
   planets: {
 	  "Alpha Invidia": {
       name: "Alpha Invidia",
@@ -26,8 +27,8 @@ function reduceGlobal(state, action) {
   switch (action.type) {
     case act.clockTick.type:
       return Object.assign({}, state, {
-        time: state.time+1
-        //planets: state.planets.map((p) => reducePlanet(p, action))
+        time: state.time+1,
+        planets: state.planets.map((p) => reducePlanet(p, action))
       })
     default:
       return state

@@ -1,1 +1,1 @@
-var store = Redux.createStore(reduceGlobal)
+var store = Redux.createStore(reduceGlobal, applyMiddleware(asyncDispatchMiddleware))
