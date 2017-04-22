@@ -34,5 +34,17 @@ function createLogMessage(message) {
   }
 }
 
-window.setInterval(function () {
-}, 1000);
+window.onload = function() {
+  //Planet
+  var currentPlanet;
+  watchBranch(store, ["currentPlanet"], function(newPlanet){
+    currentPlanet = newPlanet;
+    document.getElementById("currentPlanet").textContent=currentPlanet;
+  })
+  
+  //Food
+  watchBranch(store, ["planets"], function(planets){
+    var food = planets[currentPlanet].food;
+    document.getElementById("num_food").textContent=food;
+  })
+}
