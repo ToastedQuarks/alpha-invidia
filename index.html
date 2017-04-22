@@ -6,13 +6,16 @@
     <title>Alpha Invidia</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+  
     <link href="css/game.css" rel="stylesheet" media="screen">
-    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+  
     <style>
       body {
         padding-top: 0px;
       }
     </style>
+  
     <script src="https://unpkg.com/redux@3.6.0/dist/redux.min.js" defer></script>
     <script src="https://fitzgen.github.io/wu.js/dist/wu.min.js" defer></script>
     <script src="js/Object.assign.js" defer></script>
@@ -23,6 +26,7 @@
     <script src="js/store.js" defer></script>
     <script src="js/game.js" defer></script>
   </head>
+
   <body>
     <div class="navbar" id="pagenav">
       <a href="#">Alpha Invidia</a>
@@ -33,6 +37,7 @@
       <a href="javascript:void(0);" onclick="swapToTech()">Tech</a>
       <a href="javascript:void(0);" onclick="swapToWar()">War</a>
     </div>
+    
     <div id="maintab">
       <div id="row1">
       <div class="resources" id="curr_resource">
@@ -55,6 +60,7 @@
           Stored Food: <span id="num_food" style="padding-right:8px">10</span>
         </div>
       </div>
+  
       <div class="logbox" id="logContanier">
         <h3>Log:</h3>
         <div class="logtext">
@@ -62,12 +68,14 @@
           </ul>
         </div>
       </div>
+  
       <div class="mainviewer" id="planetinfo">
         <h3>You're on planet A1.</h3>
         <br>
         <img src="assets/green_planet.png" alt="A green planet." style="width:280px;height:280px;">
       </div>
       </div>
+
       <div id="row2">
       <div class="actionpanel" id="actions">
         <h3>Available Actions:</h3>
@@ -75,15 +83,18 @@
       </div>
       </div>
     </div>
+
     <div id="techtree" style="display:none">
       <div class="generic">
         <h3>This is the tech tree!</h3>
       </div>
     </div>
+
     <div id="wartab" style="display:none">
       <div class="generic">
         <h3>This is where you'll fight baddies!</h3>
       </div>
     </div>
+  
   </body>
 </html>
