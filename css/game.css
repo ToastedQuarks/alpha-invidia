@@ -1,0 +1,86 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* Main Navigation Bar */
+
+.navbar{
+  font-family: "Poiret One", cursive;
+  background-color: #34495E;
+  overflow: hidden;
+}
+
+.navbar a{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #1A5276;
+}
+
+.topnav a.active {
+  background-color: #117864;
+}
+
+.navbar-right {
+  float: right !important;
+}
+
+/* Game Navigation */
+
+.subnav{
+  font-family: "Roboto", sans-serif;
+  background-color: #D6DBDF;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.subnav a{
+  float: left;
+  display: block;
+  color: #1C2833;
+  text-align: center;
+  padding: 6px 18px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.subnav a:hover {
+  background-color: #D6EAF8;
+}
+
+.subnav a.active {
+  background-color: #D1F2EB;
+}
+
+/* Resources Panel */
+
+.resources {
+  float: left;
+  width: 300px;
+  font-family: "Roboto", sans-serif;
+  margin-right: 10px;
+}
+
+/* Main Area */
+
+.mainviewer {
+  float: left;
+  font-family: "Roboto", sans-serif;
+  margin-right: 10px;
+}
+
+/* Actions */
+
+.actionpanel {
+  float: right;
+  width: 300px;
+  font-family: "Roboto", sans-serif;
+  margin-left: 10px;
+}
