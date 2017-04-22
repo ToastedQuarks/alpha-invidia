@@ -62,8 +62,14 @@
 /* Resources Panel */
 
 .resources {
+  border-radius: 25px;
+  background: #EBF5FB;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
   float: left;
-  width: 300px;
+  width: 370px;
+  height: 500px;
   font-family: "Roboto", sans-serif;
   margin-right: 10px;
 }
@@ -71,7 +77,13 @@
 /* Main Area */
 
 .mainviewer {
-  float: left;
+  border-radius: 25px;
+  background: #EBF5FB;
+  overflow: hidden;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  height: 500px;
   font-family: "Roboto", sans-serif;
   margin-right: 10px;
 }
@@ -79,8 +91,30 @@
 /* Actions */
 
 .actionpanel {
+  border-radius: 25px;
+  background: #EBF5FB;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  overflow-x: hidden;
+  height: 100px;
+  font-family: "Roboto", sans-serif;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+/* Log Box */
+
+.logbox {
+  border-radius: 25px;
+  background: #EBF5FB;
   float: right;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  overflow-y: scroll;
   width: 300px;
+  height: 630px;
   font-family: "Roboto", sans-serif;
   margin-left: 10px;
 }

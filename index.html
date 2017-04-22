@@ -25,24 +25,43 @@
       <a href="javascript:void(0);" onclick="swapToWar()">War</a>
     </div>
     <div id="maintab">
+      <div id="row1">
       <div class="resources" id="curr_resource">
-        Things you have:
+        <h3>Current Resources:</h3>
+        <br>
+        <div id="unassigned">
+          <img src="assets/unemployed.png" alt="unassigned person" style="width:30px;height:30px;">
+          Unassigned Population: <span id="num_unassigned">10</span>
+        </div>
+        <br>
+        <div id="farmers">
+          <img src="assets/farmer.png" alt="farmer" style="width:30px;height:30px;">
+          Farming Population: <span id="num_farmer">10</span>
+        </div>
+      </div>
+      <div class="logbox" id="actions">
+        <h3>Log:</h3>
       </div>
       <div class="mainviewer" id="planetinfo">
-        You're on planet A1.
+        <h3>You're on planet A1.</h3>
+        <br>
+        <img src="assets/green_planet.png" alt="A green planet." style="width:280px;height:280px;">
       </div>
+      </div>
+      <div id="row2">
       <div class="actionpanel" id="actions">
-        Try out some stuff:
+        <h3>Try out some stuff:</h3>
+      </div>
       </div>
     </div>
     <div id="techtree" style="display:none">
       <div class="generic">
-        This is the tech tree!
+        <h3>This is the tech tree!</h3>
       </div>
     </div>
     <div id="wartab" style="display:none">
       <div class="generic">
-        This is where you'll fight baddies!
+        <h3>This is where you'll fight baddies!</h3>
       </div>
     </div>
     <script src="js/game.js"></script>
