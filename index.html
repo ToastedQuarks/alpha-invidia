@@ -6,8 +6,8 @@
     <title>Alpha Invidia</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap -->
     <link href="css/game.css" rel="stylesheet" media="screen">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
     <style>
       body {
         padding-top: 0px;
@@ -37,19 +37,26 @@
       <div id="row1">
       <div class="resources" id="curr_resource">
         <h3>Current Resources:</h3>
-        <br>
         <div id="unassigned">
           <img src="assets/unemployed.png" alt="unassigned person" style="width:30px;height:30px;">
           Unassigned Population: <span id="num_unassigned">10</span>
         </div>
-        <br>
         <div id="farmers">
           <img src="assets/farmer.png" alt="farmer" style="width:30px;height:30px;">
           Farming Population: <span id="num_farmer">10</span>
         </div>
+        <br>
+        <div id="food">
+          <img src="assets/farmer.png" alt="farmer" style="width:30px;height:30px;">
+          Stored Food: <span id="num_food">10</span>
+        </div>
       </div>
-      <div class="logbox" id="actions">
+      <div class="logbox" id="logContanier">
         <h3>Log:</h3>
+        <div class="logtext">
+          <ul id="gameLog">
+          </ul>
+        </div>
       </div>
       <div class="mainviewer" id="planetinfo">
         <h3>You're on planet A1.</h3>
@@ -59,7 +66,8 @@
       </div>
       <div id="row2">
       <div class="actionpanel" id="actions">
-        <h3>Try out some stuff:</h3>
+        <h3>Available Actions:</h3>
+        <button type="button" name="travelButton" class="actionButton">Travel!</button>
       </div>
       </div>
     </div>
