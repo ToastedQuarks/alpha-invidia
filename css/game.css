@@ -17,7 +17,7 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .navbar a:hover {
@@ -46,9 +46,9 @@
   display: block;
   color: #1C2833;
   text-align: center;
-  padding: 6px 18px;
+  padding: 8px 18px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .subnav a:hover {
@@ -131,4 +131,16 @@
   float: left;
   font-family: "Roboto", sans-serif;
   margin-right: 10px;
+}
+
+.actionButton {
+    border-radius: 3px;
+    background-color: #28B463;
+    border: none;
+    color: #f2f2f2;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
