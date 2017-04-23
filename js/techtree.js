@@ -46,6 +46,7 @@ function displayInfo(buttonID) {
   cost.textContent = "Cost: " + thisTech.cost;
   var buyButton = document.createElement("button");
   buyButton.className = "actionButton";
+  buyButton.textContent = "Research";
   
   if (infoDiv.hasChildNodes()){
     clearInfo();
@@ -53,4 +54,5 @@ function displayInfo(buttonID) {
   infoDiv.appendChild(title);
   infoDiv.appendChild(detail);
   infoDiv.appendChild(cost);
+  infoDiv.appendChild(buyButton);
 }
