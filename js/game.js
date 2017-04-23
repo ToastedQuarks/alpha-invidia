@@ -47,4 +47,10 @@ window.onload = function() {
     var food = planets[currentPlanet].food;
     document.getElementById("num_food").textContent=food;
   })
+  
+  //Planet Image
+  watchBranch(store, ["planets"], function(planets){
+    var imgsrc = planets[currentPlanet].imgPath;
+    document.getElementById("planetImage").src=imgsrc;
+  })
 }

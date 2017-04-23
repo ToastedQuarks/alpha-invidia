@@ -5,7 +5,8 @@ var initialState = {
 	  "Alpha Invidia": {
       name: "Alpha Invidia",
 	    food: 10,
-	    population: ["Romulus", "Remus"]
+	    population: ["Romulus", "Remus"],
+        imgPath: "assets/green_planet.png"
 	  }
   },
   people: {
