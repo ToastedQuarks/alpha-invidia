@@ -25,6 +25,7 @@
     <script src="js/reducers.js" defer></script>
     <script src="js/store.js" defer></script>
     <script src="js/game.js" defer></script>
+    <script src="js/techtree.js" defer></script>
   </head>
 
   <body>
@@ -99,27 +100,31 @@
       <div class="tree">
         <ul>
           <li>
-            <button id="tech-settle" class="researched">Settle</button>
+            <button id="tech-settle" class="researched" onclick="displayInfo(this.id)">Settle</button>
             <ul>
               <li>
-                <button id="tech-farming" class="notResearched">Farming</button>
+                <button id="tech-farming" class="notResearched" onclick="displayInfo(this.id)">Farming</button>
               </li>
               <ul>
                 <li>
-                  <button id="tech-tools" class="notResearched">Tools</button>
+                  <button id="tech-tools" class="notResearched" onclick="displayInfo(this.id)">Tools</button>
                 </li>
                   <ul>
                     <li>
-                      <button id="tech-rockets" class="notResearched">Rockets</button>
+                      <button id="tech-rockets" class="notResearched" onclick="displayInfo(this.id)">Rockets</button>
                     </li>
                   </ul>
                 <li>
-                  <button id="tech-weapons" class="notResearched">Weapons</button>
+                  <button id="tech-weapons" class="notResearched" onclick="displayInfo(this.id)">Weapons</button>
                 </li>
               </ul>
             </ul>
           </li>
         </ul>
+      </div>
+      <div class="treeInfo" >
+        <h3>Info:</h3>
+        <div id="treeDetail"><p>Click on a button to see details.</p></div>
       </div>
     </div>
 
