@@ -9,21 +9,28 @@ function sequence(prefix) {
     return prefix + num
   }
 }
-
-function dig(path, object) {
-  if (object === undefined || path.length < 1) {
-    return object
-  }
-  return dig(path.slice(1), object[path[0]])
-}
     
 function watchBranch(store, path, callback) {
-  var currentState = dig(path, store.getState())
-  callback(currentState, undefined)
+  var dig = _.property(path)
+  var curState = dig(store.getState())
+  callback(curState, undefined)
   return store.subscribe(function() {
-    var newState = dig(path, store.getState())
-    if (newState !== currentState) {
-      callback(newState, currentState)
+    var newState = dig(store.getState())
+    if (!_.isEqual(curState, newState)) {
+      callback(newState, curState)
     }
+    curState = newState
+  })
+}
+
+function updateIn(object, path, value) {
+  path = _.toPath(path)
+  if (path.length < 1) {
+    return value
+  }
+  return Object.assign({}, object, {
+    [path[0]]: updateIn(object[path[0]],
+                        path.slice(1),
+                        value)
   })
 }

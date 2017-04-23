@@ -20,10 +20,7 @@ var initialState = {
   }
 }
 
-function reducePlanet(globalState, planet, action) {
-  if (planet === undefined) {
-    throw "reducePlanets is not a root reducer! It requires an explicit state"
-  }
+function reducePlanet(planet, action) {
   switch (action.type) {
     case act.clockTick.type:
       var food = planet.food - planet.population.length
@@ -34,26 +31,53 @@ function reducePlanet(globalState, planet, action) {
       return Object.assign({}, planet, {
         food: Math.max(food, 0)
       })
+    case act.death.type:
+      return updateIn(planet, "population",
+                      _.filter(planet.population, function(x) {
+                        return x !== action.person
+                      }))
     default:
       return planet
   }
 }
 
-function reduceGlobal(state, action) {
-  if (state === undefined) {
-    state = initialState
+function reducePlanets(planets, action) {
+  return _.mapValues(planets, function(planet) {
+    return reducePlanet(planet, action)
+  })
+}
+
+function reducePerson(person, action, global) {
+  switch (action.type) {
+    case act.death.type:
+      return updateIn(person, "died", global.time)
+    default:
+      return person
   }
+}
+
+function reducePeople(people, action, global) {
+  return _.mapValues(people, function(person) {
+    return reducePerson(person, action, global)
+  })
+}
+
+function reduceGlobal(state, action) {
   switch (action.type) {
     case act.clockTick.type:
-      return Object.assign({}, state, {
-        time: state.time+1,
-        planets: _.mapValues(state.planets, function(p) {
-          return reducePlanet(state, p, action)
-        })
-      })
-    case act.death.type:
-      console.log(action.person + " died of " + action.cause + ", but death is not yet implemented")
+      return updateIn(state, "time", state.time+1)
     default:
       return state
   }
+}
+
+function rootReducer(state, action) {
+  if (state === undefined) {
+    state = initialState
+  }
+  var general = reduceGlobal(state, action)
+  return Object.assign({}, general, {
+    planets: reducePlanets(state.planets, action),
+    people: reducePeople(state.people, action, state)
+  })
 }
