@@ -1,5 +1,6 @@
 "use strict";
 
+// These are super hacky. No ragrats.
 function swapToMain() {
   document.getElementById("maintab").style.display="block";
   document.getElementById("techtree").style.display="none";
@@ -18,8 +19,11 @@ function swapToWar() {
   document.getElementById("wartab").style.display="block";
 }
 
+/* Makes a little text li element and throws it on the DOM. If there's more
+than 100 already, whack the oldest one */
 function createLogMessage(message) {
   var newLi = document.createElement("li");
+  // Read the state directly because there's no reason to watch for changes.
   var timestamp = store.getState().time;
   var newText = document.createTextNode("Day " + timestamp + ": " + message);
   newLi.appendChild(newText);
@@ -35,6 +39,7 @@ function createLogMessage(message) {
   }
 }
 
+// On page load, make all our little watchers that will update the DOM.
 window.onload = function() {
   createLogMessage("We love our planet, but maybe there's more out there?")
   
