@@ -24,9 +24,9 @@ var asyncDispatchMiddleware = _.curry(function(store, next, action) {
   }
 
   var actionWithAsyncDispatch =
-    Object.assign({}, action, { asyncDispatch });
+      Object.assign({}, action, { asyncDispatch: asyncDispatch });
 
   next(actionWithAsyncDispatch);
   syncActivityFinished = true;
-  flushQueue();
+  flushQueue()
 });

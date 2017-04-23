@@ -4,7 +4,7 @@ var initialState = {
   planets: {
 	  "Alpha Invidia": {
       name: "Alpha Invidia",
-	    food: 100,
+	    food: 10,
 	    population: ["Romulus", "Remus"]
 	  }
   },
@@ -27,8 +27,15 @@ function reducePlanet(globalState, planet, action) {
   switch (action.type) {
     case act.clockTick.type:
       var food = planet.food - planet.population.length
-      for (var i = 0; i > food; i--) {
+      var victims = _.sampleSize(planet.population, -food)
+      for (var vic of victims) {
+        action.asyncDispatch(act.death.make(vic, "starvation"))
       }
+      return Object.assign({}, planet, {
+        food: Math.max(food, 0)
+      })
+    default:
+      return planet
   }
 }
 
@@ -40,8 +47,12 @@ function reduceGlobal(state, action) {
     case act.clockTick.type:
       return Object.assign({}, state, {
         time: state.time+1,
-        planets: state.planets.map(function(p) {reducePlanet(p, action)})
+        planets: _.mapValues(state.planets, function(p) {
+          return reducePlanet(state, p, action)
+        })
       })
+    case act.death.type:
+      console.log(action.person + " died of " + action.cause + ", but death is not yet implemented")
     default:
       return state
   }

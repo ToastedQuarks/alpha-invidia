@@ -21,5 +21,6 @@ function actionConfig(type) {
 }
 
 var act = {
-  clockTick: actionConfig("CLOCK_TICK")
+  clockTick: actionConfig("CLOCK_TICK"),
+  death: actionConfig("DEATH", "person", "cause")
 }
