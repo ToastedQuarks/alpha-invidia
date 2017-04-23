@@ -6,7 +6,8 @@ var initialState = {
       name: "Alpha Invidia",
 	    food: 10,
 	    population: ["Romulus", "Remus"],
-        imgPath: "assets/green_planet.png"
+        imgPath: "assets/green_planet.png",
+        flavorText: "Your homeworld. The ocean is home to huge algae colonies, but the reddish deserts support little life."
 	  }
   },
   people: {

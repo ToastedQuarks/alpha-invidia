@@ -53,4 +53,10 @@ window.onload = function() {
     var imgsrc = planets[currentPlanet].imgPath;
     document.getElementById("planetImage").src=imgsrc;
   })
+  
+  //Flavor Text
+  watchBranch(store, ["planets"], function(planets){
+    var text = planets[currentPlanet].flavorText;
+    document.getElementById("flavorText").textContent=text;
+  })
 }
