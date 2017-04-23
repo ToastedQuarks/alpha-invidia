@@ -20,7 +20,8 @@ function swapToWar() {
 
 function createLogMessage(message) {
   var newLi = document.createElement("li");
-  var newText = document.createTextNode(message);
+  var timestamp = store.getState().time;
+  var newText = document.createTextNode("Day " + timestamp + ": " + message);
   newLi.appendChild(newText);
   var logList = document.getElementById("gameLog");
   var msgCount = logList.getElementsByTagName("li").length;
@@ -35,6 +36,8 @@ function createLogMessage(message) {
 }
 
 window.onload = function() {
+  createLogMessage("We love our planet, but maybe there's more out there?")
+  
   //Planet
   var currentPlanet;
   watchBranch(store, ["currentPlanet"], function(newPlanet){
