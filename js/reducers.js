@@ -52,7 +52,10 @@ function reducePlanets(planets, action) {
 function reducePerson(person, action, global) {
   switch (action.type) {
     case act.death.type:
-      return updateIn(person, "died", global.time)
+      return Object.assign({}, person, {
+        died: global.time,
+        diedOf: action.cause
+      })
     default:
       return person
   }
