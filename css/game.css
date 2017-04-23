@@ -130,12 +130,15 @@
   font-size: 16px;
 }
 
-/* Generic Div */
+/* Generic Bits */
 
 .generic {
-  float: left;
   font-family: "Roboto", sans-serif;
   margin-right: 10px;
+}
+
+.h3 {
+  font-family: "Roboto", sans-serif;
 }
 
 /* Person Div */

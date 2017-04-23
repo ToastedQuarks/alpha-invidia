@@ -47,6 +47,11 @@ function createLogMessage(message) {
   }
 }
 
+// Travel to another planet.
+function changePlanet() {
+  createLogMessage("Additional planets not yet implemented!")
+}
+
 // On page load, make all our little watchers that will update the DOM.
 window.onload = function () {
   createLogMessage("We love our planet, but maybe there's more out there?");
@@ -55,7 +60,8 @@ window.onload = function () {
   var currentPlanet;
   watchBranch(store, ["currentPlanet"], function (newPlanet) {
     currentPlanet = newPlanet;
-    document.getElementById("currentPlanet").textContent = currentPlanet;
+    document.getElementById("peopleCurrPlanet").textContent = "People currently on " + currentPlanet;
+    document.getElementById("mainCurrPlanet").textContent = currentPlanet;
   });
   
   //Planet Image

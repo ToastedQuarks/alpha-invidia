@@ -75,7 +75,7 @@
       </div>
   
       <div class="mainviewer" id="planetinfo">
-        <h1 id="currentPlanet">planet</h1>
+        <h1 id="mainCurrPlanet">planet</h1>
         <br>
         <img id="planetImage" src="" alt="A planet." style="width:280px;height:280px;padding-bottom:20px;">
         <br>
@@ -86,12 +86,13 @@
       <div id="row2">
       <div class="actionpanel" id="actions">
         <h3>Available Actions:</h3>
-        <button type="button" name="travelButton" class="actionButton">Travel!</button>
+        <button type="button" name="travelButton" class="actionButton" onclick="changePlanet()">Travel!</button>
       </div>
       </div>
     </div>
     
     <div id="peopletab" style="display:none">
+      <h3 class="h3" id=peopleCurrPlanet></h3>
       <div class="generic" id="peopleContainer">
       </div>
     </div>
@@ -130,7 +131,7 @@
 
     <div id="wartab" style="display:none">
       <div class="generic">
-        <h3>This is where you'll fight baddies!</h3>
+        <h3>Nothing here yet, you need weapons first.</h3>
       </div>
     </div>
   
