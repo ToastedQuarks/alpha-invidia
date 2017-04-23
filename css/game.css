@@ -1,6 +1,7 @@
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=VT323');
 
 /* Main Navigation Bar */
 
@@ -80,6 +81,8 @@
   border-radius: 25px;
   background: #EBF5FB;
   overflow: hidden;
+  display: block;
+  text-align: center;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
@@ -123,6 +126,8 @@
   width: 295px;
   height: 570px;
   float: left;
+  font-family: 'VT323', monospace;
+  font-size: 16px;
 }
 
 /* Generic Div */
@@ -136,32 +141,78 @@
 /* Buttons! */
 
 .actionButton {
-    border-radius: 3px;
-    background-color: #28B463;
-    border: none;
-    color: #f2f2f2;
-    padding: 10px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+  border-radius: 3px;
+  background-color: #28B463;
+  border: none;
+  color: #f2f2f2;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 .actionButton:hover {
-    background-color: #82E0AA;
+  background-color: #82E0AA;
 }
 
 .counterButton {
-    border-radius: 3px;
-    background-color: white;
-    border: 1px solid black;
-    color: black;
-    padding: 2px 6px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 10px;
+  border-radius: 3px;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  padding: 2px 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
 }
+
 .counterButton:hover {
-    background-color: #B2BABB;
+  background-color: #B2BABB;
+}
+
+/* Text Decorations */
+
+.flavortext {
+  font-style: italic;
+  font-family: "Poiret One", cursive;
+  font-size: 18px;
+}
+
+/* Tree Diagram */
+
+.notResearched {
+  border-radius: 3px;
+  background-color: #D6EAF8;
+  border: 3px solid #3498DB;
+  color: #3498DB;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.researched {
+  border-radius: 3px;
+  background-color: #3498DB;
+  border: 3px solid #D6EAF8;
+  color: #D6EAF8;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.tree ul {
+  position: relative;
+  list-style-type: none;
+}
+
+.tree li {
+  padding-top: 20px;
+  position: relative;
+  list-style-type: none;
 }

@@ -42,6 +42,9 @@
       <div id="row1">
       <div class="resources" id="curr_resource">
         <h3>Current Resources:</h3>
+        <div id="totalPop" style="margin-left:32px">
+          Total Population: <span id="num_population" style="padding-right:8px">0</span>
+        </div>
         <div id="unassigned">
           <img src="assets/unemployed.png" alt="unassigned person" style="width:30px;height:30px;">
           Unassigned Population: <span id="num_unassigned" style="padding-right:8px">0</span>
@@ -64,15 +67,17 @@
       <div class="logbox" id="logContanier">
         <h3>Log:</h3>
         <div class="logtext">
-          <ul id="gameLog">
+          <ul id="gameLog" style="list-style-type:none;margin:0;padding:0;">
           </ul>
         </div>
       </div>
   
       <div class="mainviewer" id="planetinfo">
-        <h3 id="currentPlanet">planet</h3>
+        <h1 id="currentPlanet">planet</h1>
         <br>
-        <img src="assets/green_planet.png" alt="A green planet." style="width:280px;height:280px;">
+        <img id="planetImage" src="" alt="A planet." style="width:280px;height:280px;padding-bottom:20px;">
+        <br>
+        <span id="flavorText" class="flavortext"></span>
       </div>
       </div>
 
@@ -85,8 +90,30 @@
     </div>
 
     <div id="techtree" style="display:none">
-      <div class="generic">
-        <h3>This is the tech tree!</h3>
+      <div class="tree">
+        <ul>
+          <li>
+            <button id="tech-settle" class="researched">Settle</button>
+            <ul>
+              <li>
+                <button id="tech-farming" class="notResearched">Farming</button>
+              </li>
+              <ul>
+                <li>
+                  <button id="tech-tools" class="notResearched">Tools</button>
+                </li>
+                  <ul>
+                    <li>
+                      <button id="tech-rockets" class="notResearched">Rockets</button>
+                    </li>
+                  </ul>
+                <li>
+                  <button id="tech-weapons" class="notResearched">Weapons</button>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
 
