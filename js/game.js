@@ -3,18 +3,28 @@
 // These are super hacky. No ragrats.
 function swapToMain() {
   document.getElementById("maintab").style.display = "block";
+  document.getElementById("peopletab").style.display = "none";
+  document.getElementById("techtree").style.display = "none";
+  document.getElementById("wartab").style.display = "none";
+}
+
+function swapToPeople() {
+  document.getElementById("maintab").style.display = "none";
+  document.getElementById("peopletab").style.display = "block";
   document.getElementById("techtree").style.display = "none";
   document.getElementById("wartab").style.display = "none";
 }
 
 function swapToTech() {
   document.getElementById("maintab").style.display = "none";
+  document.getElementById("peopletab").style.display = "none";
   document.getElementById("techtree").style.display = "block";
   document.getElementById("wartab").style.display = "none";
 }
 
 function swapToWar() {
   document.getElementById("maintab").style.display = "none";
+  document.getElementById("peopletab").style.display = "none";
   document.getElementById("techtree").style.display = "none";
   document.getElementById("wartab").style.display = "block";
 }
@@ -61,14 +71,31 @@ window.onload = function () {
   });
   
   //Population
+  var population;
   watchBranch(store, ["planets"], function (planets) {
-    var population = planets[currentPlanet].population.length;
-    document.getElementById("num_population").textContent = population;
+    population = planets[currentPlanet].population;
+    document.getElementById("num_population").textContent = population.length;
   });
   
   //Food
   watchBranch(store, ["planets"], function (planets) {
     var food = planets[currentPlanet].food;
     document.getElementById("num_food").textContent = food;
+  });
+  
+  //People
+  watchBranch(store, ["people"], function (people) {
+    var container = document.getElementById("peopleContainer");
+    var newDiv, nameText, birthdate, key;
+    for (key of Object.keys(people)) {
+      newDiv = document.createElement("div");
+      newDiv.className = "person";
+      nameText = document.createElement("h3");
+      nameText.textContent = people[key].name;
+      birthdate = document.createTextNode("Born: " + people[key].born);
+      newDiv.appendChild(nameText);
+      newDiv.appendChild(birthdate);
+      container.appendChild(newDiv);
+    }
   });
 };

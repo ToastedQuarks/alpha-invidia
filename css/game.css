@@ -138,6 +138,19 @@
   margin-right: 10px;
 }
 
+/* Person Div */
+
+.person {
+  float: left;
+  border-radius: 25px;
+  background: #EBF5FB;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin: 10px;
+  height: 200px;
+  width: 180px;
+}
+
 /* Buttons! */
 
 .actionButton {
